@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Music Player App</string>
+    <string name="trending">Trending</string>
+    <string name="english">English</string>
+    <string name="hindi">Hindi</string>
+    <string name="punjabi">Punjabi</string>
+</resources>
