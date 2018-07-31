@@ -5,12 +5,12 @@ import android.graphics.drawable.Drawable;
 public class song {
 
  public String name_song, name_artist;
- public Drawable image;
+ public int imageResourceId;
 
-    public song(String name_song, String name_artist, Drawable image) {
+    public song(String name_song, String name_artist, int imageResourceId) {
         this.name_song = name_song;
         this.name_artist = name_artist;
-        this.image = image;
+        this.imageResourceId = imageResourceId;
     }
 
     public String getName_song() {
@@ -29,11 +29,11 @@ public class song {
         this.name_artist = name_artist;
     }
 
-    public Drawable getImage() {
-        return image;
+    public int getImageResourceId() {
+        return imageResourceId;
     }
 
-    public void setImage(Drawable image) {
-        this.image = image;
+    public void setImageResourceId(int imageResourceId) {
+        this.imageResourceId = imageResourceId;
     }
 }

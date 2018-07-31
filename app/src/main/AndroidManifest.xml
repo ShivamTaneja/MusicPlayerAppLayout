@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.shivam.musicplayerapp">
 
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
@@ -20,7 +19,7 @@
         </activity>
         <activity android:name=".Hindi" />
         <activity android:name=".English" />
-        <activity android:name=".currentsong"></activity>
+        <activity android:name=".currentsong"/>
     </application>
 
 </manifest>

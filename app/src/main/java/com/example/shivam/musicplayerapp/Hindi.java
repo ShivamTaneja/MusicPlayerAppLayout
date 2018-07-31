@@ -64,8 +64,8 @@ public class Hindi extends AppCompatActivity {
 
         ArrayList<song> Songs = new ArrayList<song>();
 
-        Songs.add(new song("SONG- halka halka", "ARTIST- Saurabh", getResources().getDrawable(R.drawable.halkahalks)));
-        Songs.add(new song("SONG- Baarish","ARTIST- Rahat",  getResources().getDrawable(R.drawable.bararish)));
+        Songs.add(new song("SONG- halka halka", "ARTIST- Saurabh",R.drawable.halkahalks));
+        Songs.add(new song("SONG- Baarish","ARTIST- Rahat",  R.drawable.bararish));
 
         songAdapter itemsAdapter = new songAdapter(this, Songs);
         GridView gridView = findViewById(R.id.grid);

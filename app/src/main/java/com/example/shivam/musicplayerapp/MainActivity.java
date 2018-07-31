@@ -5,9 +5,9 @@ import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
-
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -62,17 +62,31 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        ArrayList<song> Songs = new ArrayList<song>();
+        final ArrayList<song> Songs = new ArrayList<song>();
 
-        Songs.add(new song("SONG- difference","ARTIST- Amrit Mann",  getResources().getDrawable(R.drawable.difference)));
-        Songs.add(new song("SONG- trending nakhra", "ARTIST- Amrit Mann", getResources().getDrawable(R.drawable.trendingnakhra)));
-        Songs.add(new song("SONG- prada","ARTIST- Jass Manak",  getResources().getDrawable(R.drawable.prada)));
-        Songs.add(new song("SONG- Hath chumma","ARTIST- Ammy Virk",getResources().getDrawable(R.drawable.hathchumme)));
+        Songs.add(new song("SONG- difference","ARTIST- Amrit Mann",  R.drawable.difference));
+        Songs.add(new song("SONG- trending nakhra", "ARTIST- Amrit Mann", R.drawable.trendingnakhra));
+        Songs.add(new song("SONG- prada","ARTIST- Jass Manak",  R.drawable.prada));
+        Songs.add(new song("SONG- Hath chumma","ARTIST- Ammy Virk",R.drawable.hathchumme));
 
-        songAdapter itemsAdapter = new songAdapter(this, Songs);
-        GridView gridView = findViewById(R.id.grid);
+        final songAdapter itemsAdapter = new songAdapter(this, Songs);
+        final GridView gridView = findViewById(R.id.grid);
         gridView.setAdapter(itemsAdapter);
 
-    }
+        gridView.setOnItemClickListener(new GridView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
+                song s = Songs.get(i);
+                Intent intent = new Intent(getApplicationContext() , currentsong.class);
+                intent.putExtra("song_img" , s.getImageResourceId());
+                intent.putExtra("song_name", s.getName_song());
+                intent.putExtra("song_artist" , s.getName_artist());
+                startActivity(intent);
+
+
+            }
+        });
+
+    }
 }

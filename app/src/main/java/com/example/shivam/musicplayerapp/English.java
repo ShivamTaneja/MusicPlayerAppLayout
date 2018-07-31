@@ -64,10 +64,10 @@ public class English extends AppCompatActivity {
 
         ArrayList<song> Songs = new ArrayList<song>();
 
-        Songs.add(new song("SONG- The way i am ","ARTIST- Charlie Puth",  getResources().getDrawable(R.drawable.iwayiam)));
-        Songs.add(new song("SONG- end game","ARTIST- Rupi",  getResources().getDrawable(R.drawable.endgame)));
-        Songs.add(new song("SONG- Love story ","ARTIST- Taylor Swift" , getResources().getDrawable(R.drawable.lovestory)));
-        Songs.add(new song("SONG- Unity", "ARTIST- Shubhi", getResources().getDrawable(R.drawable.unity)));
+        Songs.add(new song("SONG- The way i am ","ARTIST- Charlie Puth", R.drawable.iwayiam));
+        Songs.add(new song("SONG- end game","ARTIST- Rupi",  R.drawable.endgame));
+        Songs.add(new song("SONG- Love story ","ARTIST- Taylor Swift" , R.drawable.lovestory));
+        Songs.add(new song("SONG- Unity", "ARTIST- Shubhi", R.drawable.unity));
 
 
         songAdapter itemsAdapter = new songAdapter(this, Songs);
