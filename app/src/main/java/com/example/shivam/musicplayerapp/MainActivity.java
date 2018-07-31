@@ -1,7 +1,6 @@
 package com.example.shivam.musicplayerapp;
 
 import android.content.Intent;
-import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -83,10 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("song_name", s.getName_song());
                 intent.putExtra("song_artist" , s.getName_artist());
                 startActivity(intent);
-
-
             }
         });
-
     }
 }

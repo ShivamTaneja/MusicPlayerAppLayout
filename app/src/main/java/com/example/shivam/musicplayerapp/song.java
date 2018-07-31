@@ -1,11 +1,9 @@
 package com.example.shivam.musicplayerapp;
 
-import android.graphics.drawable.Drawable;
-
 public class song {
 
- public String name_song, name_artist;
- public int imageResourceId;
+ private String name_song, name_artist;
+ private int imageResourceId;
 
     public song(String name_song, String name_artist, int imageResourceId) {
         this.name_song = name_song;
@@ -17,23 +15,11 @@ public class song {
         return name_song;
     }
 
-    public void setName_song(String name_song) {
-        this.name_song = name_song;
-    }
-
     public String getName_artist() {
         return name_artist;
     }
 
-    public void setName_artist(String name_artist) {
-        this.name_artist = name_artist;
-    }
-
     public int getImageResourceId() {
         return imageResourceId;
-    }
-
-    public void setImageResourceId(int imageResourceId) {
-        this.imageResourceId = imageResourceId;
     }
 }

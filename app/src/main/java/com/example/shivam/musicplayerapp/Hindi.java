@@ -2,12 +2,11 @@ package com.example.shivam.musicplayerapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -45,8 +44,6 @@ public class Hindi extends AppCompatActivity {
                 btn_hindi.setBackgroundColor(getResources().getColor(R.color.orange));
                 btn_english.setBackgroundColor(getResources().getColor(R.color.light_orange));
                 btn_punjabi.setBackgroundColor(getResources().getColor(R.color.light_orange));
-
-
             }
         });
 
@@ -62,7 +59,7 @@ public class Hindi extends AppCompatActivity {
             }
         });
 
-        ArrayList<song> Songs = new ArrayList<song>();
+        final ArrayList<song> Songs = new ArrayList<song>();
 
         Songs.add(new song("SONG- halka halka", "ARTIST- Saurabh",R.drawable.halkahalks));
         Songs.add(new song("SONG- Baarish","ARTIST- Rahat",  R.drawable.bararish));
@@ -71,6 +68,17 @@ public class Hindi extends AppCompatActivity {
         GridView gridView = findViewById(R.id.grid);
         gridView.setAdapter(itemsAdapter);
 
-    }
+        gridView.setOnItemClickListener(new GridView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
+                song s = Songs.get(i);
+                Intent intent = new Intent(getApplicationContext() , currentsong.class);
+                intent.putExtra("song_img" , s.getImageResourceId());
+                intent.putExtra("song_name", s.getName_song());
+                intent.putExtra("song_artist" , s.getName_artist());
+                startActivity(intent);
+            }
+        });
+    }
 }

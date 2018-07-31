@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 
@@ -30,8 +31,6 @@ public class English extends AppCompatActivity {
                 btn_english.setBackgroundColor(getResources().getColor(R.color.orange));
                 btn_hindi.setBackgroundColor(getResources().getColor(R.color.light_orange));
                 btn_punjabi.setBackgroundColor(getResources().getColor(R.color.light_orange));
-
-
             }
         });
 
@@ -44,9 +43,6 @@ public class English extends AppCompatActivity {
 
                 Intent intent = new Intent(getApplicationContext(), Hindi.class);
                 startActivity(intent);
-
-
-
             }
         });
 
@@ -62,7 +58,7 @@ public class English extends AppCompatActivity {
             }
         });
 
-        ArrayList<song> Songs = new ArrayList<song>();
+        final ArrayList<song> Songs = new ArrayList<song>();
 
         Songs.add(new song("SONG- The way i am ","ARTIST- Charlie Puth", R.drawable.iwayiam));
         Songs.add(new song("SONG- end game","ARTIST- Rupi",  R.drawable.endgame));
@@ -74,7 +70,19 @@ public class English extends AppCompatActivity {
         GridView gridView = findViewById(R.id.grid);
         gridView.setAdapter(itemsAdapter);
 
+        gridView.setOnItemClickListener(new GridView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                song s = Songs.get(i);
+                Intent intent = new Intent(getApplicationContext() , currentsong.class);
+                intent.putExtra("song_img" , s.getImageResourceId());
+                intent.putExtra("song_name", s.getName_song());
+                intent.putExtra("song_artist" , s.getName_artist());
+                startActivity(intent);
+
+            }
+        });
+
     }
-
-
 }
