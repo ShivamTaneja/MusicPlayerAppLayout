@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/english"
                 style="?android:attr/buttonBarButtonStyle"
-                android:textColor="@color/black"
+                android:textColor="@color/grey"
                 android:layout_weight="1"
                 />
             <Button
@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/hindi"
                 style="?android:attr/buttonBarButtonStyle"
-                android:textColor="@color/black"
+                android:textColor="@color/grey"
                 android:layout_weight="1"
                 />
             <Button
@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/punjabi"
                 style="?android:attr/buttonBarButtonStyle"
-                android:textColor="@color/black"
+                android:textColor="@color/grey"
                 android:layout_weight="1"
             />
     </LinearLayout>

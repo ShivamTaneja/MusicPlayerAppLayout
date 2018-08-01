@@ -1,9 +1,12 @@
 package com.example.shivam.musicplayerapp;
 
+import android.content.Intent;
 import android.os.Handler;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -17,11 +20,13 @@ public class currentsong extends AppCompatActivity {
     private int progressStatus = 0;
     private Handler handler = new Handler();
     boolean temp=true;
+    Button btn_english, btn_punjabi, btn_hindi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_currentsong);
+        setTitle("Current Song");
 
 
         img_play = findViewById(R.id.play);
@@ -31,12 +36,45 @@ public class currentsong extends AppCompatActivity {
         name_of_song = findViewById(R.id.name_of_song);
         name_of_artist = findViewById(R.id.name_of_artist);
         progressBar = findViewById(R.id.progressBar);
+        btn_english = findViewById(R.id.button_english);
+        btn_hindi = findViewById(R.id.button_hindi);
+        btn_punjabi = findViewById(R.id.button_punjabi);
 
         state_playbutton = true;
         state_shuffle = true;
         state_repeat = true;
 
         thread.start();
+
+        btn_punjabi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        btn_hindi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getApplicationContext(), Hindi.class);
+                startActivity(intent);
+
+            }
+        });
+
+        btn_english.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getApplicationContext(), English.class);
+                startActivity(intent);
+
+            }
+        });
 
         img_play.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,14 +130,10 @@ public class currentsong extends AppCompatActivity {
             }
         });
 
-        Bundle extras = getIntent().getExtras();
-        String song_name = extras.getString("song_name");
-        String song_artist = extras.getString("song_artist");
-        int song_img = extras.getInt("song_img");
-
-        song_image.setImageResource(song_img);
-        name_of_song.setText(song_name);
-        name_of_artist.setText(song_artist);
+        song s = getIntent().getExtras().getParcelable("song");
+        song_image.setImageResource(s.getImageResourceId());
+        name_of_song.setText(s.getName_song());
+        name_of_artist.setText(s.getName_artist());
 
     }
 

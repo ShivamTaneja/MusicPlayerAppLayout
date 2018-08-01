@@ -2,6 +2,7 @@ package com.example.shivam.musicplayerapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,6 +19,7 @@ public class Hindi extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle("Hindi");
 
         btn_english = findViewById(R.id.button_english);
         btn_hindi = findViewById(R.id.button_hindi);
@@ -61,8 +63,8 @@ public class Hindi extends AppCompatActivity {
 
         final ArrayList<song> Songs = new ArrayList<song>();
 
-        Songs.add(new song("SONG- halka halka", "ARTIST- Saurabh",R.drawable.halkahalks));
-        Songs.add(new song("SONG- Baarish","ARTIST- Rahat",  R.drawable.bararish));
+        Songs.add(new song(getString(R.string.halka_halka), getString(R.string.saurabh),R.drawable.halkahalks));
+        Songs.add(new song(getString(R.string.baarish),getString(R.string.rahat),  R.drawable.bararish));
 
         songAdapter itemsAdapter = new songAdapter(this, Songs);
         GridView gridView = findViewById(R.id.grid);
@@ -72,11 +74,10 @@ public class Hindi extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
+
                 song s = Songs.get(i);
                 Intent intent = new Intent(getApplicationContext() , currentsong.class);
-                intent.putExtra("song_img" , s.getImageResourceId());
-                intent.putExtra("song_name", s.getName_song());
-                intent.putExtra("song_artist" , s.getName_artist());
+                intent.putExtra("song", (Parcelable) s);
                 startActivity(intent);
             }
         });

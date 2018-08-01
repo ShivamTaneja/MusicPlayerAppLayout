@@ -2,4 +2,27 @@
 <resources>
     <dimen name="activity_vertical_margin">10dp</dimen>
     <dimen name="activity_horizontal_margin">10dp</dimen>
+    <dimen name="one">1dp</dimen>
+    <dimen name="two">2dp</dimen>
+    <dimen name="thirty_two">32dp</dimen>
+    <dimen name="fifty">50dp</dimen>
+    <dimen name="ten">10dp</dimen>
+    <dimen name="twenty">20dp</dimen>
+    <dimen name="twenty_eight">28dp</dimen>
+    <dimen name="three">3dp</dimen>
+    <dimen name="fifteen">15dp</dimen>
+    <dimen name="zero">0dp</dimen>
+    <dimen name="threefiftysix">356dp</dimen>
+    <dimen name="eight">8dp</dimen>
+    <dimen name="oneonetwo">112dp</dimen>
+    <dimen name="forytsix">46dp</dimen>
+    <dimen name="ninetytwo">92dp</dimen>
+    <dimen name="onetwoeight">128dp</dimen>
+    <dimen name="sixteen">16dp</dimen>
+    <dimen name="onesixfour">164dp</dimen>
+    <dimen name="forty">40dp</dimen>
+    <dimen name="fiftytwo">52dp</dimen>
+    <dimen name="eighteen">18dp</dimen>
+    <dimen name="twentyfour">24dp</dimen>
+    <dimen name="onefivesix">156dp</dimen>
 </resources>

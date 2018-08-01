@@ -1,6 +1,8 @@
 package com.example.shivam.musicplayerapp;
 
 import android.content.Intent;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle("Punjabi");
 
         btn_english = findViewById(R.id.button_english);
         btn_hindi = findViewById(R.id.button_hindi);
@@ -63,10 +66,10 @@ public class MainActivity extends AppCompatActivity {
 
         final ArrayList<song> Songs = new ArrayList<song>();
 
-        Songs.add(new song("SONG- difference","ARTIST- Amrit Mann",  R.drawable.difference));
-        Songs.add(new song("SONG- trending nakhra", "ARTIST- Amrit Mann", R.drawable.trendingnakhra));
-        Songs.add(new song("SONG- prada","ARTIST- Jass Manak",  R.drawable.prada));
-        Songs.add(new song("SONG- Hath chumma","ARTIST- Ammy Virk",R.drawable.hathchumme));
+        Songs.add(new song(getString(R.string.song_difference),getString(R.string.artist_amrit_mann),  R.drawable.difference));
+        Songs.add(new song(getString(R.string.song_trending_nakhra), getString(R.string.artist_amrit_mann), R.drawable.trendingnakhra));
+        Songs.add(new song(getString(R.string.prada),getString(R.string.jass_manak),  R.drawable.prada));
+        Songs.add(new song(getString(R.string.hath_chumme),getString(R.string.ammy_virk),R.drawable.hathchumme));
 
         final songAdapter itemsAdapter = new songAdapter(this, Songs);
         final GridView gridView = findViewById(R.id.grid);
@@ -78,11 +81,11 @@ public class MainActivity extends AppCompatActivity {
 
                 song s = Songs.get(i);
                 Intent intent = new Intent(getApplicationContext() , currentsong.class);
-                intent.putExtra("song_img" , s.getImageResourceId());
-                intent.putExtra("song_name", s.getName_song());
-                intent.putExtra("song_artist" , s.getName_artist());
+                intent.putExtra("song", (Parcelable) s);
                 startActivity(intent);
             }
         });
     }
+
+
 }

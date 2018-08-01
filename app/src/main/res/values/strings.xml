@@ -5,4 +5,23 @@
     <string name="hindi">Hindi</string>
     <string name="punjabi">Punjabi</string>
     <string name="download">Download</string>
+    <string name="song_difference">SONG- difference</string>
+    <string name="artist_amrit_mann">ARTIST- Amrit Mann</string>
+    <string name="song_trending_nakhra">SONG- trending nakhra</string>
+    <string name="prada">SONG- prada</string>
+    <string name="hath_chumme">SONG- Hath chumma</string>
+    <string name="jass_manak">ARTIST- Jass Manak</string>
+    <string name="ammy_virk">ARTIST- Ammy Virk</string>
+    <string name="halka_halka">SONG- halka halka</string>
+    <string name="baarish">SONG- Baarish</string>
+    <string name="saurabh">ARTIST- Saurabh</string>
+    <string name="rahat">ARTIST- Rahat</string>
+    <string name="the_way_i_am">SONG- The way i am</string>
+    <string name="charlie_puth">ARTIST- Charlie Puth</string>
+    <string name="end_game">SONG- end game</string>
+    <string name="rupi">ARTIST- Rupi</string>
+    <string name="love_story">SONG- Love story</string>
+    <string name="taylor_swift">ARTIST- Taylor Swift</string>
+    <string name="uniity">SONG- Unity</string>
+    <string name="shubhi">ARTIST- Shubhi</string>
 </resources>
